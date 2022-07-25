@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Music</title>
+  <!-- Load FontAwesome icons -->
+  <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css">
+
+  <!-- Load the custom CSS style file -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div class="player">
+    <div class="details">
+      <div class="now-playing">PLAYING x OF y</div>
+      <div class="track-art"></div>
+      <div class="track-name">Song Name</div>
+      <div class="track-artist">Artist Name</div>
+    </div>
+    <div class="buttons">
+      <div class="prev-track" onclick="prevTrack()"><i class="lni lni-backward"></i></div>
+      <div class="playpause-track" onclick="playpauseTrack()"><i class="lni lni-play"></i></div>
+      <div class="next-track" onclick="nextTrack()"><i class="lni lni-forward"></i></div>
+    </div>
+    <div class="slider_container">
+      <div class="current-time">00:00</div>
+      <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+      <div class="total-duration">00:00</div>
+    </div>
+    <div class="slider_container">
+      <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+      <div class="sound-class">
+        <i class="lni lni-volume"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load the main script for the player -->
+  <script src="main.js"></script>
+</body>
+
+</html>
