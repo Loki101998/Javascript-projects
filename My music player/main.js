@@ -1,4 +1,3 @@
-let now_playing = document.querySelector(".now-playing");
 let track_art = document.querySelector(".track-art");
 let track_name = document.querySelector(".track-name");
 let track_artist = document.querySelector(".track-artist");
@@ -54,11 +53,7 @@ function random_bg_color() {
   let red = Math.floor(Math.random() * 256) + 64;
   let green = Math.floor(Math.random() * 256) + 64;
   let blue = Math.floor(Math.random() * 256) + 64;
-
-  // Construct a color with the the given values
-  let bgColor = "rgb(" + red + "," + green + "," + blue + ")";
-
-  // Set the background to that color
+  let bgColor = `rgb(${red},${green},${blue})`;
   document.body.style.background = bgColor;
 }
 
@@ -68,12 +63,9 @@ function loadTrack(track_index) {
   curr_track.src = track_list[track_index].path;
   curr_track.load();
 
-  track_art.style.backgroundImage =
-    "url(" + track_list[track_index].image + ")";
+  track_art.style.backgroundImage = `url(${track_list[track_index].image})`;
   track_name.textContent = track_list[track_index].name;
   track_artist.textContent = track_list[track_index].artist;
-  now_playing.textContent =
-    "PLAYING " + (track_index + 1) + " OF " + track_list.length;
 
   updateTimer = setInterval(seekUpdate, 1000);
   curr_track.addEventListener("ended", nextTrack);
